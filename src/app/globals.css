@@ -6,7 +6,7 @@
 
 @theme inline {
   --font-sans: var(--font-body);
-  --font-mono: var(--font-mono-base);
+  --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-display);
 
   --color-background: var(--background);
@@ -28,7 +28,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Named brand tokens — legacy compat */
+  /* Named brand tokens — kept for component compat */
   --color-cream: var(--brand-bg);
   --color-terracotta: var(--brand-primary);
   --color-warm-brown: var(--brand-text);
@@ -65,365 +65,95 @@
    ═══════════════════════════════════════════ */
 :root,
 [data-theme="parchment"] {
-  --brand-bg: #FAF6F1; --brand-primary: #C4714A;
-  --brand-text: #3D2B1F; --brand-muted: #E8DDD4; --brand-subtle: #8B9E77;
+  --brand-bg:      #FAF6F1;
+  --brand-primary: #C4714A;
+  --brand-text:    #3D2B1F;
+  --brand-muted:   #E8DDD4;
+  --brand-subtle:  #8B9E77;
 
-  --background: #FAF6F1; --foreground: #3D2B1F;
-  --card: #FFFFFF; --card-foreground: #3D2B1F;
-  --popover: #FFFFFF; --popover-foreground: #3D2B1F;
-  --primary: #C4714A; --primary-foreground: #FFFFFF;
-  --secondary: #E8DDD4; --secondary-foreground: #3D2B1F;
-  --muted: #E8DDD4; --muted-foreground: #7A6558;
-  --accent: #F0E9DF; --accent-foreground: #3D2B1F;
-  --destructive: #DC2626; --border: #DDD3C8; --input: #DDD3C8;
-  --ring: #C4714A; --radius: 0.75rem;
-  --chart-1: #C4714A; --chart-2: #8B9E77; --chart-3: #E8DDD4;
-  --chart-4: #3D2B1F; --chart-5: #FAF6F1;
-  --sidebar: #F2EBE3; --sidebar-foreground: #3D2B1F;
-  --sidebar-primary: #C4714A; --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #E8DDD4; --sidebar-accent-foreground: #3D2B1F;
-  --sidebar-border: #DDD3C8; --sidebar-ring: #C4714A;
-  --font-display: var(--font-playfair); --font-body: var(--font-inter);
-  --font-mono-base: var(--font-geist-mono);
-}
+  --background:           #FAF6F1;
+  --foreground:           #3D2B1F;
+  --card:                 #FFFFFF;
+  --card-foreground:      #3D2B1F;
+  --popover:              #FFFFFF;
+  --popover-foreground:   #3D2B1F;
+  --primary:              #C4714A;
+  --primary-foreground:   #FFFFFF;
+  --secondary:            #E8DDD4;
+  --secondary-foreground: #3D2B1F;
+  --muted:                #E8DDD4;
+  --muted-foreground:     #7A6558;
+  --accent:               #F0E9DF;
+  --accent-foreground:    #3D2B1F;
+  --destructive:          #DC2626;
+  --border:               #DDD3C8;
+  --input:                #DDD3C8;
+  --ring:                 #C4714A;
+  --radius:               0.75rem;
 
-/* ═══════════════════════════════════════════
-   MIDNIGHT — Linear + Raycast (softened)
-   Lifted background, warm-tinted text
-   Space Grotesk + Inter
-   ═══════════════════════════════════════════ */
-[data-theme="midnight"] {
-  --brand-bg: #13131A; --brand-primary: #6366F1;
-  --brand-text: #E4E4EF; --brand-muted: #1E1E2A; --brand-subtle: #818CF8;
+  --chart-1: #C4714A; --chart-2: #8B9E77;
+  --chart-3: #E8DDD4; --chart-4: #3D2B1F; --chart-5: #FAF6F1;
 
-  --background: #13131A; --foreground: #E4E4EF;
-  --card: #1A1A24; --card-foreground: #E4E4EF;
-  --popover: #1E1E2A; --popover-foreground: #E4E4EF;
-  --primary: #6366F1; --primary-foreground: #FFFFFF;
-  --secondary: #1E1E2A; --secondary-foreground: #A1A1B5;
-  --muted: #1E1E2A; --muted-foreground: #6B6B82;
-  --accent: #252535; --accent-foreground: #E4E4EF;
-  --destructive: #EF4444; --border: #2A2A3A; --input: #2A2A3A;
-  --ring: #6366F1; --radius: 0.5rem;
-  --chart-1: #6366F1; --chart-2: #818CF8; --chart-3: #2A2A3A;
-  --chart-4: #E4E4EF; --chart-5: #13131A;
-  --sidebar: #0F0F16; --sidebar-foreground: #E4E4EF;
-  --sidebar-primary: #6366F1; --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #1E1E2A; --sidebar-accent-foreground: #E4E4EF;
-  --sidebar-border: #2A2A3A; --sidebar-ring: #6366F1;
-  --font-display: var(--font-space-grotesk); --font-body: var(--font-inter);
-  --font-mono-base: var(--font-geist-mono);
-}
+  --sidebar:                    #F2EBE3;
+  --sidebar-foreground:         #3D2B1F;
+  --sidebar-primary:            #C4714A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent:             #E8DDD4;
+  --sidebar-accent-foreground:  #3D2B1F;
+  --sidebar-border:             #DDD3C8;
+  --sidebar-ring:               #C4714A;
 
-/* ═══════════════════════════════════════════
-   GROVE — Duolingo + Headspace
-   DM Serif Display + DM Sans
-   ═══════════════════════════════════════════ */
-[data-theme="grove"] {
-  --brand-bg: #F0F9F4; --brand-primary: #16A34A;
-  --brand-text: #052E16; --brand-muted: #DCFCE7; --brand-subtle: #4ADE80;
-
-  --background: #F0F9F4; --foreground: #052E16;
-  --card: #FFFFFF; --card-foreground: #052E16;
-  --popover: #FFFFFF; --popover-foreground: #052E16;
-  --primary: #16A34A; --primary-foreground: #FFFFFF;
-  --secondary: #DCFCE7; --secondary-foreground: #052E16;
-  --muted: #DCFCE7; --muted-foreground: #4B7A5E;
-  --accent: #BBF7D0; --accent-foreground: #052E16;
-  --destructive: #DC2626; --border: #A7F3C4; --input: #A7F3C4;
-  --ring: #16A34A; --radius: 1rem;
-  --chart-1: #16A34A; --chart-2: #4ADE80; --chart-3: #DCFCE7;
-  --chart-4: #052E16; --chart-5: #F0F9F4;
-  --sidebar: #E8F5EE; --sidebar-foreground: #052E16;
-  --sidebar-primary: #16A34A; --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #DCFCE7; --sidebar-accent-foreground: #052E16;
-  --sidebar-border: #A7F3C4; --sidebar-ring: #16A34A;
-  --font-display: var(--font-dm-serif); --font-body: var(--font-dm-sans);
-  --font-mono-base: var(--font-geist-mono);
-}
-
-/* ═══════════════════════════════════════════
-   ARC — Arc Browser
-   Lavender-tinted dark, warm purple glow
-   Space Grotesk + Inter
-   ═══════════════════════════════════════════ */
-[data-theme="arc"] {
-  --brand-bg: #1E1827; --brand-primary: #A78BFA;
-  --brand-text: #EDE9FE; --brand-muted: #2D2440; --brand-subtle: #7C3AED;
-
-  --background: #1E1827; --foreground: #EDE9FE;
-  --card: #261E35; --card-foreground: #EDE9FE;
-  --popover: #2D2440; --popover-foreground: #EDE9FE;
-  --primary: #A78BFA; --primary-foreground: #1E1827;
-  --secondary: #2D2440; --secondary-foreground: #C4B5FD;
-  --muted: #2D2440; --muted-foreground: #8B7FAD;
-  --accent: #342952; --accent-foreground: #EDE9FE;
-  --destructive: #F87171; --border: #3D2F5A; --input: #3D2F5A;
-  --ring: #A78BFA; --radius: 0.75rem;
-  --chart-1: #A78BFA; --chart-2: #7C3AED; --chart-3: #2D2440;
-  --chart-4: #EDE9FE; --chart-5: #1E1827;
-  --sidebar: #19122A; --sidebar-foreground: #EDE9FE;
-  --sidebar-primary: #A78BFA; --sidebar-primary-foreground: #1E1827;
-  --sidebar-accent: #2D2440; --sidebar-accent-foreground: #EDE9FE;
-  --sidebar-border: #3D2F5A; --sidebar-ring: #A78BFA;
-  --font-display: var(--font-space-grotesk); --font-body: var(--font-inter);
-  --font-mono-base: var(--font-geist-mono);
-}
-
-/* ═══════════════════════════════════════════
-   OBSIDIAN — Catppuccin Mocha
-   Community's most beloved low-strain dark
-   Inter + JetBrains Mono feel
-   ═══════════════════════════════════════════ */
-[data-theme="obsidian"] {
-  --brand-bg: #1E1E2E; --brand-primary: #CBA6F7;
-  --brand-text: #CDD6F4; --brand-muted: #313244; --brand-subtle: #A6E3A1;
-
-  --background: #1E1E2E; --foreground: #CDD6F4;
-  --card: #181825; --card-foreground: #CDD6F4;
-  --popover: #313244; --popover-foreground: #CDD6F4;
-  --primary: #CBA6F7; --primary-foreground: #1E1E2E;
-  --secondary: #313244; --secondary-foreground: #BAC2DE;
-  --muted: #313244; --muted-foreground: #6C7086;
-  --accent: #45475A; --accent-foreground: #CDD6F4;
-  --destructive: #F38BA8; --border: #45475A; --input: #45475A;
-  --ring: #CBA6F7; --radius: 0.5rem;
-  --chart-1: #CBA6F7; --chart-2: #A6E3A1; --chart-3: #45475A;
-  --chart-4: #CDD6F4; --chart-5: #1E1E2E;
-  --sidebar: #181825; --sidebar-foreground: #CDD6F4;
-  --sidebar-primary: #CBA6F7; --sidebar-primary-foreground: #1E1E2E;
-  --sidebar-accent: #313244; --sidebar-accent-foreground: #CDD6F4;
-  --sidebar-border: #45475A; --sidebar-ring: #CBA6F7;
-  --font-display: var(--font-space-grotesk); --font-body: var(--font-inter);
-  --font-mono-base: var(--font-geist-mono);
-}
-
-/* ═══════════════════════════════════════════
-   GITHUB — GitHub Dark Default
-   The developer community standard
-   Space Grotesk + Inter
-   ═══════════════════════════════════════════ */
-[data-theme="github"] {
-  --brand-bg: #0D1117; --brand-primary: #58A6FF;
-  --brand-text: #E6EDF3; --brand-muted: #161B22; --brand-subtle: #3FB950;
-
-  --background: #0D1117; --foreground: #E6EDF3;
-  --card: #161B22; --card-foreground: #E6EDF3;
-  --popover: #161B22; --popover-foreground: #E6EDF3;
-  --primary: #58A6FF; --primary-foreground: #0D1117;
-  --secondary: #21262D; --secondary-foreground: #8B949E;
-  --muted: #161B22; --muted-foreground: #8B949E;
-  --accent: #21262D; --accent-foreground: #E6EDF3;
-  --destructive: #F85149; --border: #30363D; --input: #21262D;
-  --ring: #58A6FF; --radius: 0.375rem;
-  --chart-1: #58A6FF; --chart-2: #3FB950; --chart-3: #21262D;
-  --chart-4: #E6EDF3; --chart-5: #0D1117;
-  --sidebar: #010409; --sidebar-foreground: #E6EDF3;
-  --sidebar-primary: #58A6FF; --sidebar-primary-foreground: #0D1117;
-  --sidebar-accent: #21262D; --sidebar-accent-foreground: #E6EDF3;
-  --sidebar-border: #30363D; --sidebar-ring: #58A6FF;
-  --font-display: var(--font-space-grotesk); --font-body: var(--font-inter);
-  --font-mono-base: var(--font-geist-mono);
-}
-
-/* ═══════════════════════════════════════════
-   BEAR — Bear Notes App
-   Warm amber dark — cozy, literary, unique
-   Merriweather + Inter
-   ═══════════════════════════════════════════ */
-[data-theme="bear"] {
-  --brand-bg: #1C1A15; --brand-primary: #F59E0B;
-  --brand-text: #F5ECD7; --brand-muted: #2A2620; --brand-subtle: #FCD34D;
-
-  --background: #1C1A15; --foreground: #F5ECD7;
-  --card: #242019; --card-foreground: #F5ECD7;
-  --popover: #2A2620; --popover-foreground: #F5ECD7;
-  --primary: #F59E0B; --primary-foreground: #1C1A15;
-  --secondary: #2A2620; --secondary-foreground: #D4C4A0;
-  --muted: #2A2620; --muted-foreground: #8A7D62;
-  --accent: #332E24; --accent-foreground: #F5ECD7;
-  --destructive: #EF4444; --border: #3D3628; --input: #3D3628;
-  --ring: #F59E0B; --radius: 0.625rem;
-  --chart-1: #F59E0B; --chart-2: #FCD34D; --chart-3: #3D3628;
-  --chart-4: #F5ECD7; --chart-5: #1C1A15;
-  --sidebar: #171512; --sidebar-foreground: #F5ECD7;
-  --sidebar-primary: #F59E0B; --sidebar-primary-foreground: #1C1A15;
-  --sidebar-accent: #2A2620; --sidebar-accent-foreground: #F5ECD7;
-  --sidebar-border: #3D3628; --sidebar-ring: #F59E0B;
-  --font-display: var(--font-merriweather); --font-body: var(--font-inter);
-  --font-mono-base: var(--font-geist-mono);
-}
-
-/* ═══════════════════════════════════════════
-   STRIPE — Stripe brand / Stripe Press
-   Deep violet, premium financial feel
-   Space Grotesk + Inter
-   ═══════════════════════════════════════════ */
-[data-theme="stripe"] {
-  --brand-bg: #0A0524; --brand-primary: #635BFF;
-  --brand-text: #EDE9FE; --brand-muted: #130E3A; --brand-subtle: #818CF8;
-
-  --background: #0A0524; --foreground: #EDE9FE;
-  --card: #110A30; --card-foreground: #EDE9FE;
-  --popover: #1A1245; --popover-foreground: #EDE9FE;
-  --primary: #635BFF; --primary-foreground: #FFFFFF;
-  --secondary: #1A1245; --secondary-foreground: #BAB4E8;
-  --muted: #130E3A; --muted-foreground: #7B72C5;
-  --accent: #221860; --accent-foreground: #EDE9FE;
-  --destructive: #F87171; --border: #281E6B; --input: #281E6B;
-  --ring: #635BFF; --radius: 0.5rem;
-  --chart-1: #635BFF; --chart-2: #818CF8; --chart-3: #281E6B;
-  --chart-4: #EDE9FE; --chart-5: #0A0524;
-  --sidebar: #060318; --sidebar-foreground: #EDE9FE;
-  --sidebar-primary: #635BFF; --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #1A1245; --sidebar-accent-foreground: #EDE9FE;
-  --sidebar-border: #281E6B; --sidebar-ring: #635BFF;
-  --font-display: var(--font-space-grotesk); --font-body: var(--font-inter);
-  --font-mono-base: var(--font-geist-mono);
-}
-
-/* ═══════════════════════════════════════════
-   RAYCAST — Raycast productivity app
-   Warm dark base, coral/red accent
-   Crisp but not harsh — best balance
-   Space Grotesk + Inter
-   ═══════════════════════════════════════════ */
-[data-theme="raycast"] {
-  --brand-bg: #1A1614; --brand-primary: #FF6363;
-  --brand-text: #F5F0EE; --brand-muted: #251F1C; --brand-subtle: #FF9F9F;
-
-  --background: #1A1614; --foreground: #F5F0EE;
-  --card: #221D1A; --card-foreground: #F5F0EE;
-  --popover: #2C2522; --popover-foreground: #F5F0EE;
-  --primary: #FF6363; --primary-foreground: #FFFFFF;
-  --secondary: #251F1C; --secondary-foreground: #C4B8B3;
-  --muted: #251F1C; --muted-foreground: #7A6E6A;
-  --accent: #332A27; --accent-foreground: #F5F0EE;
-  --destructive: #FF6363; --border: #3D3330; --input: #3D3330;
-  --ring: #FF6363; --radius: 0.625rem;
-  --chart-1: #FF6363; --chart-2: #FF9F9F; --chart-3: #3D3330;
-  --chart-4: #F5F0EE; --chart-5: #1A1614;
-  --sidebar: #141110; --sidebar-foreground: #F5F0EE;
-  --sidebar-primary: #FF6363; --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #251F1C; --sidebar-accent-foreground: #F5F0EE;
-  --sidebar-border: #3D3330; --sidebar-ring: #FF6363;
-  --font-display: var(--font-space-grotesk); --font-body: var(--font-inter);
-  --font-mono-base: var(--font-geist-mono);
-}
-
-/* ═══════════════════════════════════════════
-   CRAFT — Craft Docs
-   Sky blue light, editorial + premium
-   Merriweather + Inter
-   ═══════════════════════════════════════════ */
-[data-theme="craft"] {
-  --brand-bg: #F5F8FF; --brand-primary: #2563EB;
-  --brand-text: #0F172A; --brand-muted: #E1EAFF; --brand-subtle: #3B82F6;
-
-  --background: #F5F8FF; --foreground: #0F172A;
-  --card: #FFFFFF; --card-foreground: #0F172A;
-  --popover: #FFFFFF; --popover-foreground: #0F172A;
-  --primary: #2563EB; --primary-foreground: #FFFFFF;
-  --secondary: #E1EAFF; --secondary-foreground: #0F172A;
-  --muted: #EEF3FF; --muted-foreground: #475569;
-  --accent: #DBEAFE; --accent-foreground: #0F172A;
-  --destructive: #DC2626; --border: #BFDBFE; --input: #BFDBFE;
-  --ring: #2563EB; --radius: 0.75rem;
-  --chart-1: #2563EB; --chart-2: #3B82F6; --chart-3: #E1EAFF;
-  --chart-4: #0F172A; --chart-5: #F5F8FF;
-  --sidebar: #EEF3FF; --sidebar-foreground: #0F172A;
-  --sidebar-primary: #2563EB; --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #E1EAFF; --sidebar-accent-foreground: #0F172A;
-  --sidebar-border: #BFDBFE; --sidebar-ring: #2563EB;
-  --font-display: var(--font-merriweather); --font-body: var(--font-inter);
-  --font-mono-base: var(--font-geist-mono);
-}
-
-/* ═══════════════════════════════════════════
-   SUPABASE — Supabase dev platform
-   Rich dark + emerald green, very dev-tool
-   Space Grotesk + Inter
-   ═══════════════════════════════════════════ */
-[data-theme="supabase"] {
-  --brand-bg: #171717; --brand-primary: #3ECF8E;
-  --brand-text: #EDEDED; --brand-muted: #1F1F1F; --brand-subtle: #22C55E;
-
-  --background: #171717; --foreground: #EDEDED;
-  --card: #1F1F1F; --card-foreground: #EDEDED;
-  --popover: #282828; --popover-foreground: #EDEDED;
-  --primary: #3ECF8E; --primary-foreground: #0A0A0A;
-  --secondary: #282828; --secondary-foreground: #A3A3A3;
-  --muted: #1F1F1F; --muted-foreground: #737373;
-  --accent: #2E2E2E; --accent-foreground: #EDEDED;
-  --destructive: #EF4444; --border: #2E2E2E; --input: #2E2E2E;
-  --ring: #3ECF8E; --radius: 0.375rem;
-  --chart-1: #3ECF8E; --chart-2: #22C55E; --chart-3: #2E2E2E;
-  --chart-4: #EDEDED; --chart-5: #171717;
-  --sidebar: #0F0F0F; --sidebar-foreground: #EDEDED;
-  --sidebar-primary: #3ECF8E; --sidebar-primary-foreground: #0A0A0A;
-  --sidebar-accent: #282828; --sidebar-accent-foreground: #EDEDED;
-  --sidebar-border: #2E2E2E; --sidebar-ring: #3ECF8E;
-  --font-display: var(--font-space-grotesk); --font-body: var(--font-inter);
-  --font-mono-base: var(--font-geist-mono);
-}
-
-/* ═══════════════════════════════════════════
-   FIGMA — Figma dark UI
-   Warm-gray dark, orange/brand accent
-   Space Grotesk + Inter
-   ═══════════════════════════════════════════ */
-[data-theme="figma"] {
-  --brand-bg: #1E1E1E; --brand-primary: #F24E1E;
-  --brand-text: #E8E8E8; --brand-muted: #2C2C2C; --brand-subtle: #A259FF;
-
-  --background: #1E1E1E; --foreground: #E8E8E8;
-  --card: #2C2C2C; --card-foreground: #E8E8E8;
-  --popover: #333333; --popover-foreground: #E8E8E8;
-  --primary: #F24E1E; --primary-foreground: #FFFFFF;
-  --secondary: #2C2C2C; --secondary-foreground: #ADADAD;
-  --muted: #2C2C2C; --muted-foreground: #888888;
-  --accent: #383838; --accent-foreground: #E8E8E8;
-  --destructive: #F24E1E; --border: #383838; --input: #383838;
-  --ring: #F24E1E; --radius: 0.25rem;
-  --chart-1: #F24E1E; --chart-2: #A259FF; --chart-3: #383838;
-  --chart-4: #E8E8E8; --chart-5: #1E1E1E;
-  --sidebar: #141414; --sidebar-foreground: #E8E8E8;
-  --sidebar-primary: #F24E1E; --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #2C2C2C; --sidebar-accent-foreground: #E8E8E8;
-  --sidebar-border: #383838; --sidebar-ring: #F24E1E;
-  --font-display: var(--font-space-grotesk); --font-body: var(--font-inter);
-  --font-mono-base: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
+  --font-body:    var(--font-inter);
 }
 
 /* ═══════════════════════════════════════════
    TODOIST — Todoist productivity app
-   Neutral dark, vibrant red energy
-   Space Grotesk + Inter
+   Neutral dark, vibrant red, Space Grotesk
    ═══════════════════════════════════════════ */
 [data-theme="todoist"] {
-  --brand-bg: #1F1F1F; --brand-primary: #DB4035;
-  --brand-text: #FFFFFF; --brand-muted: #282828; --brand-subtle: #E67E22;
+  --brand-bg:      #1F1F1F;
+  --brand-primary: #DB4035;
+  --brand-text:    #FFFFFF;
+  --brand-muted:   #282828;
+  --brand-subtle:  #E67E22;
 
-  --background: #1F1F1F; --foreground: #FFFFFF;
-  --card: #282828; --card-foreground: #FFFFFF;
-  --popover: #333333; --popover-foreground: #FFFFFF;
-  --primary: #DB4035; --primary-foreground: #FFFFFF;
-  --secondary: #333333; --secondary-foreground: #AAAAAA;
-  --muted: #282828; --muted-foreground: #777777;
-  --accent: #383838; --accent-foreground: #FFFFFF;
-  --destructive: #DB4035; --border: #383838; --input: #383838;
-  --ring: #DB4035; --radius: 0.5rem;
-  --chart-1: #DB4035; --chart-2: #E67E22; --chart-3: #383838;
-  --chart-4: #FFFFFF; --chart-5: #1F1F1F;
-  --sidebar: #161616; --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #DB4035; --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #282828; --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #383838; --sidebar-ring: #DB4035;
-  --font-display: var(--font-space-grotesk); --font-body: var(--font-inter);
-  --font-mono-base: var(--font-geist-mono);
+  --background:           #1F1F1F;
+  --foreground:           #FFFFFF;
+  --card:                 #282828;
+  --card-foreground:      #FFFFFF;
+  --popover:              #333333;
+  --popover-foreground:   #FFFFFF;
+  --primary:              #DB4035;
+  --primary-foreground:   #FFFFFF;
+  --secondary:            #333333;
+  --secondary-foreground: #AAAAAA;
+  --muted:                #282828;
+  --muted-foreground:     #777777;
+  --accent:               #383838;
+  --accent-foreground:    #FFFFFF;
+  --destructive:          #DB4035;
+  --border:               #383838;
+  --input:                #383838;
+  --ring:                 #DB4035;
+  --radius:               0.5rem;
+
+  --chart-1: #DB4035; --chart-2: #E67E22;
+  --chart-3: #383838; --chart-4: #FFFFFF; --chart-5: #1F1F1F;
+
+  --sidebar:                    #161616;
+  --sidebar-foreground:         #FFFFFF;
+  --sidebar-primary:            #DB4035;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent:             #282828;
+  --sidebar-accent-foreground:  #FFFFFF;
+  --sidebar-border:             #383838;
+  --sidebar-ring:               #DB4035;
+
+  --font-display: var(--font-space-grotesk);
+  --font-body:    var(--font-inter);
 }
 
-/* ─────────────── Base layer ─────────────── */
 @layer base {
   * { @apply border-border outline-ring/50; }
   body {
@@ -434,24 +164,11 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading), serif;
   }
-  [data-theme="midnight"] h1,
-  [data-theme="midnight"] h2,
-  [data-theme="midnight"] h3,
-  [data-theme="arc"] h1,
-  [data-theme="arc"] h2,
-  [data-theme="github"] h1,
-  [data-theme="github"] h2,
-  [data-theme="stripe"] h1,
-  [data-theme="stripe"] h2,
-  [data-theme="supabase"] h1,
-  [data-theme="supabase"] h2,
-  [data-theme="figma"] h1,
-  [data-theme="figma"] h2,
   [data-theme="todoist"] h1,
   [data-theme="todoist"] h2,
-  [data-theme="raycast"] h1,
-  [data-theme="raycast"] h2 {
-    letter-spacing: -0.025em;
+  [data-theme="todoist"] h3,
+  [data-theme="todoist"] h4 {
+    letter-spacing: -0.02em;
     font-weight: 600;
   }
 }
