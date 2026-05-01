@@ -5,9 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-body);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-playfair);
+  --font-heading: var(--font-display);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -28,12 +28,19 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Brand palette as Tailwind utilities */
-  --color-cream: var(--cream);
-  --color-terracotta: var(--terracotta);
-  --color-warm-brown: var(--warm-brown);
-  --color-sand: var(--sand);
-  --color-sage: var(--sage);
+  /* Brand palette tokens — resolved per theme */
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-text: var(--brand-text);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-subtle: var(--brand-subtle);
+
+  /* Legacy named tokens kept for component compat */
+  --color-cream: var(--brand-bg);
+  --color-terracotta: var(--brand-primary);
+  --color-warm-brown: var(--brand-text);
+  --color-sand: var(--brand-muted);
+  --color-sage: var(--brand-subtle);
 
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -59,34 +66,38 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-:root {
-  /* Brand raw values */
-  --cream: #FAF6F1;
-  --terracotta: #C4714A;
-  --warm-brown: #3D2B1F;
-  --sand: #E8DDD4;
-  --sage: #8B9E77;
+/* ─────────────────────────────────────────────
+   THEME: PARCHMENT (default)
+   Inspired by Notion + editorial print journals
+   Playfair Display + Inter
+   ───────────────────────────────────────────── */
+:root,
+[data-theme="parchment"] {
+  --brand-bg:      #FAF6F1;
+  --brand-primary: #C4714A;
+  --brand-text:    #3D2B1F;
+  --brand-muted:   #E8DDD4;
+  --brand-subtle:  #8B9E77;
 
-  /* Semantic tokens overridden to warm palette */
-  --background: #FAF6F1;
-  --foreground: #3D2B1F;
-  --card: #FFFFFF;
-  --card-foreground: #3D2B1F;
-  --popover: #FFFFFF;
+  --background:         #FAF6F1;
+  --foreground:         #3D2B1F;
+  --card:               #FFFFFF;
+  --card-foreground:    #3D2B1F;
+  --popover:            #FFFFFF;
   --popover-foreground: #3D2B1F;
-  --primary: #C4714A;
+  --primary:            #C4714A;
   --primary-foreground: #FFFFFF;
-  --secondary: #E8DDD4;
+  --secondary:          #E8DDD4;
   --secondary-foreground: #3D2B1F;
-  --muted: #E8DDD4;
-  --muted-foreground: #7A6558;
-  --accent: #E8DDD4;
-  --accent-foreground: #3D2B1F;
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: #DDD3C8;
-  --input: #DDD3C8;
-  --ring: #C4714A;
-  --radius: 0.75rem;
+  --muted:              #E8DDD4;
+  --muted-foreground:   #7A6558;
+  --accent:             #F0E9DF;
+  --accent-foreground:  #3D2B1F;
+  --destructive:        oklch(0.577 0.245 27.325);
+  --border:             #DDD3C8;
+  --input:              #DDD3C8;
+  --ring:               #C4714A;
+  --radius:             0.75rem;
 
   --chart-1: #C4714A;
   --chart-2: #8B9E77;
@@ -94,43 +105,119 @@
   --chart-4: #3D2B1F;
   --chart-5: #FAF6F1;
 
-  --sidebar: #F2EBE3;
-  --sidebar-foreground: #3D2B1F;
-  --sidebar-primary: #C4714A;
+  --sidebar:                    #F2EBE3;
+  --sidebar-foreground:         #3D2B1F;
+  --sidebar-primary:            #C4714A;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #E8DDD4;
-  --sidebar-accent-foreground: #3D2B1F;
-  --sidebar-border: #DDD3C8;
-  --sidebar-ring: #C4714A;
+  --sidebar-accent:             #E8DDD4;
+  --sidebar-accent-foreground:  #3D2B1F;
+  --sidebar-border:             #DDD3C8;
+  --sidebar-ring:               #C4714A;
+
+  --font-display: var(--font-playfair);
+  --font-body:    var(--font-inter);
 }
 
-.dark {
-  --background: #1C1410;
-  --foreground: #FAF6F1;
-  --card: #2A1F18;
-  --card-foreground: #FAF6F1;
-  --popover: #2A1F18;
-  --popover-foreground: #FAF6F1;
-  --primary: #C4714A;
+/* ─────────────────────────────────────────────
+   THEME: MIDNIGHT
+   Inspired by Linear, Raycast, Vercel
+   Inter throughout — tight, developer-sleek
+   ───────────────────────────────────────────── */
+[data-theme="midnight"] {
+  --brand-bg:      #0A0A0B;
+  --brand-primary: #6366F1;
+  --brand-text:    #F4F4F5;
+  --brand-muted:   #1E1E22;
+  --brand-subtle:  #818CF8;
+
+  --background:         #0A0A0B;
+  --foreground:         #F4F4F5;
+  --card:               #141416;
+  --card-foreground:    #F4F4F5;
+  --popover:            #1A1A1E;
+  --popover-foreground: #F4F4F5;
+  --primary:            #6366F1;
   --primary-foreground: #FFFFFF;
-  --secondary: #3D2B1F;
-  --secondary-foreground: #FAF6F1;
-  --muted: #3D2B1F;
-  --muted-foreground: #A8917E;
-  --accent: #3D2B1F;
-  --accent-foreground: #FAF6F1;
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: #4A3728;
-  --input: #4A3728;
-  --ring: #C4714A;
-  --sidebar: #2A1F18;
-  --sidebar-foreground: #FAF6F1;
-  --sidebar-primary: #C4714A;
+  --secondary:          #1E1E22;
+  --secondary-foreground: #A1A1AA;
+  --muted:              #1E1E22;
+  --muted-foreground:   #71717A;
+  --accent:             #27272A;
+  --accent-foreground:  #F4F4F5;
+  --destructive:        #EF4444;
+  --border:             #27272A;
+  --input:              #27272A;
+  --ring:               #6366F1;
+  --radius:             0.5rem;
+
+  --chart-1: #6366F1;
+  --chart-2: #818CF8;
+  --chart-3: #27272A;
+  --chart-4: #F4F4F5;
+  --chart-5: #0A0A0B;
+
+  --sidebar:                    #111113;
+  --sidebar-foreground:         #F4F4F5;
+  --sidebar-primary:            #6366F1;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #3D2B1F;
-  --sidebar-accent-foreground: #FAF6F1;
-  --sidebar-border: #4A3728;
-  --sidebar-ring: #C4714A;
+  --sidebar-accent:             #1E1E22;
+  --sidebar-accent-foreground:  #F4F4F5;
+  --sidebar-border:             #27272A;
+  --sidebar-ring:               #6366F1;
+
+  --font-display: var(--font-inter);
+  --font-body:    var(--font-inter);
+}
+
+/* ─────────────────────────────────────────────
+   THEME: GROVE
+   Inspired by Duolingo, Headspace, Calm
+   DM Serif Display + DM Sans — friendly, alive
+   ───────────────────────────────────────────── */
+[data-theme="grove"] {
+  --brand-bg:      #F0F9F4;
+  --brand-primary: #16A34A;
+  --brand-text:    #052E16;
+  --brand-muted:   #DCFCE7;
+  --brand-subtle:  #4ADE80;
+
+  --background:         #F0F9F4;
+  --foreground:         #052E16;
+  --card:               #FFFFFF;
+  --card-foreground:    #052E16;
+  --popover:            #FFFFFF;
+  --popover-foreground: #052E16;
+  --primary:            #16A34A;
+  --primary-foreground: #FFFFFF;
+  --secondary:          #DCFCE7;
+  --secondary-foreground: #052E16;
+  --muted:              #DCFCE7;
+  --muted-foreground:   #4B7A5E;
+  --accent:             #BBF7D0;
+  --accent-foreground:  #052E16;
+  --destructive:        oklch(0.577 0.245 27.325);
+  --border:             #A7F3C4;
+  --input:              #A7F3C4;
+  --ring:               #16A34A;
+  --radius:             1rem;
+
+  --chart-1: #16A34A;
+  --chart-2: #4ADE80;
+  --chart-3: #DCFCE7;
+  --chart-4: #052E16;
+  --chart-5: #F0F9F4;
+
+  --sidebar:                    #E8F5EE;
+  --sidebar-foreground:         #052E16;
+  --sidebar-primary:            #16A34A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent:             #DCFCE7;
+  --sidebar-accent-foreground:  #052E16;
+  --sidebar-border:             #A7F3C4;
+  --sidebar-ring:               #16A34A;
+
+  --font-display: var(--font-dm-serif);
+  --font-body:    var(--font-dm-sans);
 }
 
 @layer base {
@@ -139,11 +226,28 @@
   }
   body {
     @apply bg-background text-foreground;
+    transition: background-color 0.25s ease, color 0.15s ease;
   }
   html {
     @apply font-sans;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading), serif;
+  }
+
+  /* Midnight theme: headings use tight tracking */
+  [data-theme="midnight"] h1,
+  [data-theme="midnight"] h2,
+  [data-theme="midnight"] h3,
+  [data-theme="midnight"] h4 {
+    letter-spacing: -0.03em;
+    font-weight: 600;
+  }
+
+  /* Grove theme: slightly more rounded feel */
+  [data-theme="grove"] h1,
+  [data-theme="grove"] h2,
+  [data-theme="grove"] h3 {
+    font-weight: 700;
   }
 }

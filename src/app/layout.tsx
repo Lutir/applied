@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, DM_Sans, DM_Serif_Display } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,6 +16,20 @@ const playfair = Playfair_Display({
   weight: ["400", "600", "700"],
 });
 
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const dmSerif = DM_Serif_Display({
+  variable: "--font-dm-serif",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+});
+
 export const metadata: Metadata = {
   title: "Applied — SDE to Applied Scientist",
   description: "A 12-month gamified curriculum for transitioning from SDE to Applied Scientist in Generative AI.",
@@ -28,10 +43,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      data-theme="parchment"
+      className={`${inter.variable} ${playfair.variable} ${dmSans.variable} ${dmSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
